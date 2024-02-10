@@ -1,2 +1,3 @@
 require('dq')
-vim.cmd 'colorscheme everforest'
+vim.cmd 'colorscheme neosolarized'
+--vim.cmd 'colorscheme everforest'
