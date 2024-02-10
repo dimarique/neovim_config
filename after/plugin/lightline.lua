@@ -1,6 +1,6 @@
 vim.g.lightline = {
-	--colorscheme = 'everforest',
-	colorscheme = 'solarized',
+	colorscheme = 'everforest',
+	--colorscheme = 'solarized',
 	active = {
 		left = { { 'modified' }, { 'mode', 'paste' }, { 'readonly', 'path' } }
 	},

@@ -2,7 +2,8 @@
 --vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formating_sync()]]
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 vim.cmd [[autocmd ColorScheme * call lightline#init()]]
-vim.cmd.noshowmode = true
+--vim.opt.noshowmode = true
+vim.cmd "set noshowmode"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4
