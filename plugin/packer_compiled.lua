@@ -120,6 +120,11 @@ _G.packer_plugins = {
     path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  everforest = {
+    loaded = true,
+    path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -130,20 +135,15 @@ _G.packer_plugins = {
     path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
-  ["lightline-bufferline"] = {
-    loaded = true,
-    path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/lightline-bufferline",
-    url = "https://github.com/mengelbrecht/lightline-bufferline"
-  },
-  ["lightline.vim"] = {
-    loaded = true,
-    path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/lightline.vim",
-    url = "https://github.com/itchyny/lightline.vim"
-  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -194,6 +194,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/dimarique/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,

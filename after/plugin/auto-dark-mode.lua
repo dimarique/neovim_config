@@ -4,14 +4,10 @@ auto_dark_mode.setup({
 	set_dark_mode = function()
 		vim.api.nvim_set_option('background', 'dark')
 		vim.cmd("colorscheme nord")
-		vim.g.lightline = { colorscheme = 'nord' }
-		vim.cmd("redrawstatus")
 	end,
 	set_light_mode = function()
 		vim.api.nvim_set_option('background', 'light')
-		vim.cmd("colorscheme NeoSolarized")
-		--vim.g.lightline = { colorscheme = 'papercolor' }
-		vim.cmd("redrawstatus")
+		vim.cmd("colorscheme everforest")
 	end,
 })
 auto_dark_mode.init()

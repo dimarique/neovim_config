@@ -1,8 +1,9 @@
 local opt = vim.opt
 local cmd = vim.cmd
 
-cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
-cmd [[autocmd ColorScheme * call lightline#init()]]
+--cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
+cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })]]
 
 opt.showmode = false
 opt.cursorline = true

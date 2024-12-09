@@ -12,10 +12,13 @@ return require('packer').startup(function(use)
 	--	use 'rmehri01/onenord.nvim'
 	--	use 'ayu-theme/ayu-vim'
 	use 'overcache/NeoSolarized'
-	--use 'sainnhe/everforest'
+	use 'sainnhe/everforest'
 	use 'NLKNguyen/papercolor-theme'
 	--use 'xiyaowong/transparent.nvim'
-
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
 
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use {
@@ -42,8 +45,8 @@ return require('packer').startup(function(use)
 	}
 	use 'lukas-reineke/indent-blankline.nvim'
 	--use 'majutsushi/tagbar'
-	use 'itchyny/lightline.vim'
-	use 'mengelbrecht/lightline-bufferline'
+	--use 'itchyny/lightline.vim'
+	--use 'mengelbrecht/lightline-bufferline'
 	-- use 'mattn/emmet-vim'
 	use 'windwp/nvim-autopairs'
 	use 'mhinz/vim-startify'
