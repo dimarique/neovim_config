@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/dimarique/.cache/nvim/packer_hererocks/2.1.1732813678/share/lua/5.1/?.lua;/Users/dimarique/.cache/nvim/packer_hererocks/2.1.1732813678/share/lua/5.1/?/init.lua;/Users/dimarique/.cache/nvim/packer_hererocks/2.1.1732813678/lib/luarocks/rocks-5.1/?.lua;/Users/dimarique/.cache/nvim/packer_hererocks/2.1.1732813678/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/dimarique/.cache/nvim/packer_hererocks/2.1.1732813678/lib/lua/5.1/?.so"
+local package_path_str = "/Users/dimarique/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?.lua;/Users/dimarique/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?/init.lua;/Users/dimarique/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?.lua;/Users/dimarique/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/dimarique/.cache/nvim/packer_hererocks/2.1.1736781742/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -196,9 +196,8 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/dimarique/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    loaded = true,
+    path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
@@ -216,6 +215,17 @@ _G.packer_plugins = {
     path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["project.nvim"] = {
+    config = { "\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17project_nvim\frequire\0" },
+    loaded = true,
+    path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/project.nvim",
+    url = "https://github.com/ahmedkhalf/project.nvim"
+  },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -225,11 +235,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/vim-convert-color-to",
     url = "https://github.com/amadeus/vim-convert-color-to"
-  },
-  ["vim-indent-guides"] = {
-    loaded = true,
-    path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/vim-indent-guides",
-    url = "https://github.com/nathanaelkane/vim-indent-guides"
   },
   ["vim-startify"] = {
     loaded = true,
@@ -248,6 +253,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for ChatGPT.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fchatgpt\frequire\0", "config", "ChatGPT.nvim")
 time([[Config for ChatGPT.nvim]], false)
+-- Config for: project.nvim
+time([[Config for project.nvim]], true)
+try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17project_nvim\frequire\0", "config", "project.nvim")
+time([[Config for project.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

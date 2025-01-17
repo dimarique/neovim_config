@@ -3,27 +3,33 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use {
-		-- here tag was 0.1.5
+
+		-- Here tag was 0.1.5
 		'nvim-telescope/telescope.nvim', tag = '0.1.8',
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
+
+	use {
+		"nvim-telescope/telescope-file-browser.nvim",
+		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+	}
+	-- Themes
 	use 'arcticicestudio/nord-vim'
 	use "f-person/auto-dark-mode.nvim"
-	--	use 'rmehri01/onenord.nvim'
-	--	use 'ayu-theme/ayu-vim'
 	use 'overcache/NeoSolarized'
 	use 'sainnhe/everforest'
 	use 'NLKNguyen/papercolor-theme'
-	--use 'xiyaowong/transparent.nvim'
+
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 	}
-
+	use 'nvim-tree/nvim-web-devicons'
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		requires = {
+
 			-- LSP Support
 			{ 'neovim/nvim-lspconfig' },
 			{ 'williamboman/mason.nvim' },
@@ -39,22 +45,30 @@ return require('packer').startup(function(use)
 
 			-- Snippets
 			{ 'L3MON4D3/LuaSnip' },
+
 			-- Snippet Collection (Optional)
 			{ 'rafamadriz/friendly-snippets' },
 		}
 	}
 	use 'lukas-reineke/indent-blankline.nvim'
-	--use 'majutsushi/tagbar'
-	--use 'itchyny/lightline.vim'
-	--use 'mengelbrecht/lightline-bufferline'
-	-- use 'mattn/emmet-vim'
 	use 'windwp/nvim-autopairs'
 	use 'mhinz/vim-startify'
 	use 'vimwiki/vimwiki'
 	use 'brenoprata10/nvim-highlight-colors'
 	use 'preservim/nerdcommenter'
+
+	--Sets projects root folder
+	use {
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup {
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			}
+		end
+	}
 	use 'amadeus/vim-convert-color-to'
-	use 'nathanaelkane/vim-indent-guides'
 	use({
 		"jackMort/ChatGPT.nvim",
 		config = function()
