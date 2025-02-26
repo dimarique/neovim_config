@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
 	use 'overcache/NeoSolarized'
 	use 'sainnhe/everforest'
 	use 'NLKNguyen/papercolor-theme'
-
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -43,7 +42,7 @@ return require('packer').startup(function(use)
 			{ 'hrsh7th/cmp-nvim-lsp' },
 			{ 'hrsh7th/cmp-nvim-lua' },
 
-			-- Snippets
+			--Snippets
 			{ 'L3MON4D3/LuaSnip' },
 
 			-- Snippet Collection (Optional)
