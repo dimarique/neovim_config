@@ -1,4 +1,5 @@
 local lsp = require('lsp-zero')
+local cmp = require('cmp')
 
 lsp.preset('recommended')
 
@@ -19,6 +20,42 @@ lsp.configure('lua_ls', {
 	},
 })
 
+--[[
+   [lsp.configure('emmet_ls', {
+   [    capabilities = {
+   [        textDocument = {
+   [            completion = {
+   [                completionItem = {
+   [                    snippetSupport = false
+   [                }
+   [            }
+   [        }
+   [    }
+   [})
+   ]]
+
+
+cmp.setup({
+	completion = {
+		keyword_length = 2, -- Предлагать после 2 символов (можно увеличить)
+	},
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' },
+	}, {
+		{ name = 'buffer', keyword_length = 5 }, -- Буферный ввод будет менее приоритетным
+	}),
+})
+
+--[[
+   [lsp.setup_nvim_cmp({
+   [    sources = {
+   [        { name = 'nvim_lsp' },
+   [        { name = 'luasnip' },
+   [    }
+   [})
+   ]]
+
 lsp.setup()
 
 vim.api.nvim_create_autocmd("CursorHold", {
@@ -27,18 +64,3 @@ vim.api.nvim_create_autocmd("CursorHold", {
 		vim.diagnostic.open_float(nil, { focusable = false })
 	end,
 })
-
---require('lspconfig').ltex.setup {
---cmd = { "ltex-ls" },
---filetypes = { "markdown", "text", "tex", "vimwiki", "wiki" },
---settings = {
---ltex = {
---language = "de",
---diagnosticSeverity = "information",
---additionalRules = {
---enablePickyRules = true,
---motherTongue = "de"
---},
---},
---},
---}
