@@ -9,6 +9,7 @@ require('lualine').setup({
 		section_separators = '',
 		component_separators = '',
 		disabled_filetypes = { 'NvimTree', 'packer', 'startify' },
+		refresh = { statusline = 1000 },
 	},
 	sections = {
 		lualine_a = { 'mode' },
@@ -17,14 +18,14 @@ require('lualine').setup({
 		lualine_x = {},
 		lualine_y = {},
 		lualine_z = {
-			buffer_word_and_char_count,
+			buffer_word_and_char_count, function() return os.date('%H:%M:%S') end
 		},
 	},
 	tabline = {
 		lualine_a = {
 			{
 				'buffers',
-				max_length = vim.o.columns,
+				max_length = vim.o.columns
 			}
 		},
 		lualine_b = {},

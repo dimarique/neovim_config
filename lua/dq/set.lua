@@ -6,7 +6,7 @@ local cmd = vim.cmd
 cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })]]
 
 opt.showmode = false
-opt.cursorline = true
+--opt.cursorline = true
 opt.number = true
 opt.relativenumber = true
 opt.tabstop = 2
