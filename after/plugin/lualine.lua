@@ -15,7 +15,12 @@ require('lualine').setup({
 		lualine_a = { 'mode' },
 		lualine_b = { 'branch', 'diff' },
 		lualine_c = { 'diagnostics' },
-		lualine_x = {},
+		lualine_x = {
+			{
+				'filename',
+				path = 3,
+			}
+		},
 		lualine_y = {},
 		lualine_z = {
 			buffer_word_and_char_count, function() return os.date('%H:%M:%S') end

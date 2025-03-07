@@ -231,6 +231,11 @@ _G.packer_plugins = {
     path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["transparent.nvim"] = {
+    loaded = true,
+    path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/transparent.nvim",
+    url = "https://github.com/xiyaowong/transparent.nvim"
+  },
   ["vim-convert-color-to"] = {
     loaded = true,
     path = "/Users/dimarique/.local/share/nvim/site/pack/packer/start/vim-convert-color-to",

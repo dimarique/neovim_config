@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
 	use 'vimwiki/vimwiki'
 	use 'brenoprata10/nvim-highlight-colors'
 	use 'preservim/nerdcommenter'
-
+	use 'xiyaowong/transparent.nvim'
 	--Sets projects root folder
 	use {
 		"ahmedkhalf/project.nvim",
