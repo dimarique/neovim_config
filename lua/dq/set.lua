@@ -22,6 +22,7 @@ opt.showtabline = 2
 --opt.background = 'light'
 opt.autochdir = true
 opt.foldmethod = 'manual'
+
 opt.cmdheight = 1
 opt.linebreak = true
 opt.completeopt = { "menu", "menuone", "noselect" }
