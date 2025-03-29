@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim', tag = '0.1.8',
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
-
+	use "nvim-tree/nvim-tree.lua"
 	use {
 		"nvim-telescope/telescope-file-browser.nvim",
 		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
