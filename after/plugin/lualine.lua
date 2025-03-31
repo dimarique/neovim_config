@@ -13,7 +13,19 @@ require('lualine').setup({
 	},
 	sections = {
 		lualine_a = { 'mode' },
-		lualine_b = { 'branch', 'diff' },
+
+		lualine_b = {
+			{
+				'branch',
+				color = function()
+					local branch = vim.fn.systemlist('git rev-parse --abbrev-ref HEAD')[1]
+					if branch == 'main' or branch == 'master' then
+						return { bg = '#FF0000' } -- Красный цвет
+					end
+				end
+			},
+			'diff'
+		},
 		lualine_c = { 'diagnostics' },
 		lualine_x = {
 			{
