@@ -1,4 +1,4 @@
-vim.cmd [[packadd packer.nvim]]
+--vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
@@ -57,27 +57,27 @@ return require('packer').startup(function(use)
 	use 'preservim/nerdcommenter'
 	use 'xiyaowong/transparent.nvim'
 	--Sets projects root folder
-	use {
-		"ahmedkhalf/project.nvim",
-		config = function()
-			require("project_nvim").setup {
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			}
-		end
-	}
+	--use {
+	--"ahmedkhalf/project.nvim",
+	--config = function()
+	--require("project_nvim").setup {
+	---- your configuration comes here
+	---- or leave it empty to use the default settings
+	---- refer to the configuration section below
+	--}
+	--end
+	--}
 	use 'amadeus/vim-convert-color-to'
-	use({
-		"jackMort/ChatGPT.nvim",
-		config = function()
-			require("chatgpt").setup({
-			})
-		end,
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim"
-		}
-	})
+	--use({
+	--"jackMort/ChatGPT.nvim",
+	--config = function()
+	--require("chatgpt").setup({
+	--})
+	--end,
+	--requires = {
+	--"MunifTanjim/nui.nvim",
+	--"nvim-lua/plenary.nvim",
+	--"nvim-telescope/telescope.nvim"
+	--}
+	--})
 end)
