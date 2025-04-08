@@ -1,7 +1,7 @@
-local function buffer_word_and_char_count()
-	local wc = vim.fn.wordcount()
-	return string.format("%d W. %d Z.", wc.words, wc.chars)
-end
+--local function buffer_word_and_char_count()
+--local wc = vim.fn.wordcount()
+--return string.format("%d W. %d Z.", wc.words, wc.chars)
+--end
 
 require('lualine').setup({
 	options = {
@@ -34,9 +34,9 @@ require('lualine').setup({
 			}
 		},
 		lualine_y = {},
-		lualine_z = {
-			buffer_word_and_char_count, function() return os.date('%H:%M:%S') end
-		},
+		--lualine_z = {
+		--buffer_word_and_char_count, function() return os.date('%H:%M:%S') end
+		--},
 	},
 	tabline = {
 		lualine_a = {
