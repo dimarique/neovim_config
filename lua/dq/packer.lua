@@ -56,6 +56,13 @@ return require('packer').startup(function(use)
 	use 'brenoprata10/nvim-highlight-colors'
 	use 'preservim/nerdcommenter'
 	use 'xiyaowong/transparent.nvim'
+	--use 'stevearc/aerial.nvim'
+	use({
+    "stevearc/aerial.nvim",
+    config = function()
+      require("aerial").setup()
+    end,
+  })
 	--Sets projects root folder
 	--use {
 	--"ahmedkhalf/project.nvim",
