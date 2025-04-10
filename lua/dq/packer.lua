@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
 	}
 	use 'nvim-tree/nvim-web-devicons'
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+	use 'HiPhish/rainbow-delimiters.nvim'
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		requires = {
@@ -58,11 +59,11 @@ return require('packer').startup(function(use)
 	use 'xiyaowong/transparent.nvim'
 	--use 'stevearc/aerial.nvim'
 	use({
-    "stevearc/aerial.nvim",
-    config = function()
-      require("aerial").setup()
-    end,
-  })
+		"stevearc/aerial.nvim",
+		config = function()
+			require("aerial").setup()
+		end,
+	})
 	--Sets projects root folder
 	--use {
 	--"ahmedkhalf/project.nvim",
