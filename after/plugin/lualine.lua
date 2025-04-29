@@ -49,6 +49,20 @@ require('lualine').setup({
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
-		lualine_z = {},
+		lualine_z = {
+			function()
+				local tabs = {}
+				local current = vim.fn.tabpagenr()
+				local total = vim.fn.tabpagenr('$')
+				for i = 1, total do
+					if i == current then
+						table.insert(tabs, '[' .. i .. ']')
+					else
+						table.insert(tabs, tostring(i))
+					end
+				end
+				return 'Tabs: ' .. table.concat(tabs, ' ')
+			end
+		},
 	},
 })
