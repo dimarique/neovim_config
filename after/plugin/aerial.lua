@@ -1,5 +1,14 @@
 require("aerial").setup({
-	filter_kind = false,
+	filter_kind = {
+		"Class",
+		"Constructor",
+		"Enum",
+		"Function",
+		"Interface",
+		"Module",
+		"Method",
+		"Struct",
+	},
 	backends = { "lsp", "treesitter" },
 	-- optionally use on_attach to set keymaps when aerial has attached to a buffer
 	on_attach = function(bufnr)

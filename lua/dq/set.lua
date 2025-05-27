@@ -10,20 +10,21 @@ opt.relativenumber = true
 opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
-opt.expandtab = false
+opt.expandtab = true
 opt.smartindent = true
 opt.termguicolors = true
-opt.scrolloff = 10
+opt.scrolloff = 8
+opt.fixeol = false
 opt.signcolumn = "yes"
-opt.isfname:append("@-@")
-opt.updatetime = 50
+--opt.isfname:append("@-@")
+opt.updatetime = 200
 --opt.colorcolumn = "100"
 opt.showtabline = 2
 --opt.background = 'light'
-opt.autochdir = true
+--opt.autochdir = true
 opt.foldmethod = 'manual'
 
 opt.cmdheight = 1
 opt.linebreak = true
-opt.completeopt = { "menu", "menuone", "noselect" }
+opt.completeopt = { "menu", "menuone" }
 opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr-o:hor20"

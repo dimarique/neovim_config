@@ -1,9 +1,44 @@
-local lsp = require('lsp-zero')
+local lsp_zero = require('lsp-zero')
 local cmp = require('cmp')
 
-lsp.preset('recommended')
+-- Подгрузка сниппетов из 'friendly-snippets'
+require("luasnip.loaders.from_vscode").lazy_load()
+-- Настройка автодополнения
+lsp_zero.extend_cmp()
 
-lsp.configure('lua_ls', {
+
+cmp.setup({
+	mapping = cmp.mapping.preset.insert({
+		['<CR>'] = cmp.mapping.confirm({ select = true }),
+		['<Tab>'] = cmp.mapping.select_next_item(),
+		['<S-Tab>'] = cmp.mapping.select_prev_item(),
+	}),
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' },
+	}, {
+		{ name = 'buffer', keyword_length = 5 },
+	}),
+})
+--cmp.setup({
+--completion = {
+--keyword_length = 2,
+--},
+--sources = cmp.config.sources({
+--{ name = 'nvim_lsp' },
+--{ name = 'luasnip' },
+--}, {
+--{ name = 'buffer', keyword_length = 5 },
+--}),
+--})
+
+-- Настройка keymaps при подключении LSP
+lsp_zero.on_attach(function(client, bufnr)
+	lsp_zero.default_keymaps({ buffer = bufnr })
+end)
+
+-- Настройка конкретного сервера (lua_ls)
+require('lspconfig').lua_ls.setup({
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -20,44 +55,15 @@ lsp.configure('lua_ls', {
 	},
 })
 
---[[
-   [lsp.configure('emmet_ls', {
-   [    capabilities = {
-   [        textDocument = {
-   [            completion = {
-   [                completionItem = {
-   [                    snippetSupport = false
-   [                }
-   [            }
-   [        }
-   [    }
-   [})
-   ]]
-
-
-cmp.setup({
-	completion = {
-		keyword_length = 2, -- Предлагать после 2 символов (можно увеличить)
+-- mason + mason-lspconfig
+require('mason').setup({})
+require('mason-lspconfig').setup({
+	handlers = {
+		lsp_zero.default_setup,
 	},
-	sources = cmp.config.sources({
-		{ name = 'nvim_lsp' },
-		{ name = 'luasnip' },
-	}, {
-		{ name = 'buffer', keyword_length = 5 }, -- Буферный ввод будет менее приоритетным
-	}),
 })
 
---[[
-   [lsp.setup_nvim_cmp({
-   [    sources = {
-   [        { name = 'nvim_lsp' },
-   [        { name = 'luasnip' },
-   [    }
-   [})
-   ]]
-
-lsp.setup()
-
+-- Показ диагностики при удержании курсора
 vim.api.nvim_create_autocmd("CursorHold", {
 	pattern = "*",
 	callback = function()
