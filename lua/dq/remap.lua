@@ -19,10 +19,13 @@ vim.keymap.set("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
 
+vim.keymap.set("n", "<A-Right>", ":vertical resize +5<CR>")
+vim.keymap.set("n", "<A-Left>", ":vertical resize -5<CR>")
+
 vim.keymap.set("n", "<leader>l", function()
-	vim.cmd("silent write")                               -- сохранить файл
-	vim.cmd("silent !prettier --write % > /dev/null 2>&1") -- форматировать тихо
-	vim.cmd("edit!")                                      -- перезагрузить буфер
+  vim.cmd("silent write")                                -- сохранить файл
+  vim.cmd("silent !prettier --write % > /dev/null 2>&1") -- форматировать тихо
+  vim.cmd("edit!")                                       -- перезагрузить буфер
 end, { desc = "Format with Prettier (silent)" })
 
 
@@ -31,7 +34,7 @@ vim.keymap.set({ "i", "s" }, "<C-L>", function() ls.jump(1) end, { silent = true
 vim.keymap.set({ "i", "s" }, "<C-J>", function() ls.jump(-1) end, { silent = true })
 
 vim.keymap.set({ "i", "s" }, "<C-E>", function()
-	if ls.choice_active() then
-		ls.change_choice(1)
-	end
+  if ls.choice_active() then
+    ls.change_choice(1)
+  end
 end, { silent = true })
