@@ -58,12 +58,24 @@ return require('packer').startup(function(use)
       { 'rafamadriz/friendly-snippets' },
     }
   }
+
+  use {
+    'numToStr/Comment.nvim',
+    requires = {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+    },
+    config = function()
+      require('Comment').setup {
+        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+      }
+    end
+  }
   use 'lukas-reineke/indent-blankline.nvim'
   use 'windwp/nvim-autopairs'
   use 'mhinz/vim-startify'
   use 'vimwiki/vimwiki'
   use 'brenoprata10/nvim-highlight-colors'
-  use 'preservim/nerdcommenter'
+  --use 'preservim/nerdcommenter'
   use 'xiyaowong/transparent.nvim'
   --use 'stevearc/aerial.nvim'
   use({
