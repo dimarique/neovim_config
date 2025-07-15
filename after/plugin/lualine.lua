@@ -1,3 +1,6 @@
+vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
+local git_blame = require('gitblame')
+
 require('lualine').setup({
   options = {
     theme = 'auto',
@@ -15,13 +18,20 @@ require('lualine').setup({
         color = function()
           local branch = vim.fn.systemlist('git rev-parse --abbrev-ref HEAD')[1]
           if branch == 'main' or branch == 'master' then
-            return { bg = '#FF0000' } -- Красный цвет
+            return { bg = '#FF0000' }
           end
         end
       },
       'diff'
     },
-    lualine_c = { 'diagnostics' },
+
+    lualine_c = {
+      'diagnostics',
+      {
+        git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available
+      }
+    },
+
     lualine_x = {
       {
         'filename',
@@ -30,6 +40,7 @@ require('lualine').setup({
     },
     lualine_y = {},
   },
+
   tabline = {
     lualine_a = {
       {

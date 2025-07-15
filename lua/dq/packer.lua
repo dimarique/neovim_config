@@ -32,6 +32,15 @@ return require('packer').startup(function(use)
       require("treesitter-context").setup({})
     end
   }
+  use {
+    'f-person/git-blame.nvim',
+    config = function()
+      -- vim.g.gitblame_enabled = 0
+      -- vim.g.gitblame_date_format = '%d.%m.%y %H:%M'
+      vim.g.gitblame_date_format = '%r'
+    end
+  }
+
   use 'HiPhish/rainbow-delimiters.nvim'
   use {
     'VonHeikemen/lsp-zero.nvim',
